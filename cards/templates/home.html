@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% for recipe in object_list %}
+    <div class="post-entry">
+      <h2><a href="{%url 'recipe_detail' recipe.pk %}">{{ recipe.title }}</a></h2>
+      {{ recipe.price }}
+    </div>
+  {% endfor %}
+{% endblock content %}
