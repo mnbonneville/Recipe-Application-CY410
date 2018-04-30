@@ -15,6 +15,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 import paypalrestsdk
 from paypalrestsdk import Payment
+from django.utils import timezone
 
 from .forms import RecipeForm
 
@@ -91,7 +92,7 @@ def checkout(request,processor):
 def process_order(request,processor):
     if processor == "paypal":
         payment_id= request.GET.get('paymentId')
-        cart= Cart.objects.filter(payment_id=payment_id)
+        cart= Cart.objects.get(payment_id=payment_id)
         orders= RecipeOrder.objects.filter(cart=cart)
         total=0
         for order in orders:
@@ -154,8 +155,8 @@ def checkout_paypal(request,cart,orders):
 
     # Redirect URLs
     "redirect_urls": {
-        "return_url": "http://localhost:8000/recipe/process/paypal",
-        "cancel_url": "http://localhost:8000/recipe/home"},
+        "return_url": "http://localhost:8000/cards/process/paypal",
+        "cancel_url": "http://localhost:8000/cards/home"},
    
     # Transaction
     "transactions": [{
@@ -173,7 +174,7 @@ def checkout_paypal(request,cart,orders):
 
 # Create Payment and return status
     if payment.create():
-        cart_instance = cart.get()
+        cart_instance = cart
         cart_instance.payment_id= payment.id
         cart_instance.save()
                    
@@ -183,7 +184,7 @@ def checkout_paypal(request,cart,orders):
             if link.method == "REDIRECT":
                 redirect_url = str(link.href)
                 print("Redirect for approval: %s" % (redirect_url))
-            return redirect_url
+                return redirect_url
     else:
         print("Error while creating payment:")
         print(payment.error)

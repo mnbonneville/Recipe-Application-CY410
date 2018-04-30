@@ -1,5 +1,8 @@
 from django.urls import path
 from django.conf.urls import url
+#from django.conf.urls.static import static
+#from django.conf import settings
+#from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from . import views
 
@@ -17,3 +20,7 @@ urlpatterns = [
     url(r'^order_error/', views.order_error, name='order_error'),
     url(r'^complete_order/(\w+)', views.complete_order, name='complete_order'),
 ]
+
+#if settings.DEBUG is True:
+#    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#    urlpatterns += staticfiles_urlpatterns()

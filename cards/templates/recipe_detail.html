@@ -5,6 +5,9 @@
     <h2>{{ recipe.title }}</h2>
     <p>{{ recipe.body }}</p>
     <p>{{ recipe.price }}</p>
+    <img src="{{recipe.upload.url}}" style="width:128px;height:128px">
+        <p>{{ recipe.sensitive }}</p>
+    
     <p><a href="{% url 'add_to_cart' recipe.id %}">Add to Cart</a></p>
     <p>{{ recipe.date }}</p>
   </div>

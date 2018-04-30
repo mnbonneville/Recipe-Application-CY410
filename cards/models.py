@@ -4,14 +4,23 @@ from django.contrib.auth.models import User
 from django.conf import settings
 #from encrypted_model_fields.fields import EncryptedCharField
 #from fernet_fields import EncryptedTextField
+from time import time
+from django_cryptography.fields import encrypt
+
+SECRET_KEY = '77&mr^k*rb9qinjl$+p7%@jz!4)*wg6-%bd8op^e7(lf641bxx'
+
+def get_media_file_name_to_upload(instance, filename):
+    return settings.UPLOAD_FILE_PATTERN % (str(time()).replace('.','_'), filename)
 
 # Create your models here.
 class Recipe(models.Model):
+    author= models.CharField(max_length=200, default='DEFAULT_NAME')
     title = models.CharField(max_length=200)
     body = models.TextField()
     date = models.DateField(default=date.today)
     price= models.DecimalField(decimal_places=2, max_digits=8, default=0.00)
-    #sensitive = EncryptedTextField(max_length=100)
+    sensitive = encrypt(models.CharField(max_length=50, default=0.00))
+    upload = models.FileField(upload_to=get_media_file_name_to_upload, default='SOME STRING')
 
     def __str__(self):
         return self.title

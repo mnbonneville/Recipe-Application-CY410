@@ -1,0 +1,50 @@
+1520  ls
+ 1521  cd ..
+ 1522  ls
+ 1523  sudo su
+ 1524  cd ~
+ 1525  gedit user.ldif&
+ 1526  ldapadd -x -D cn=admin,dc=semo,dc=edu -W -f user.ldif
+ 1527  ldapsearch -x
+ 1528  service apache2 restart
+ 1529  ldapsearch -x
+
+
+304  apt install proftpd proftpd-mod-ldap
+  305  cd phpldapadmin/
+  306  gedit config.php &
+  307  service apache2 restart
+  308  cd ../ldap/
+  309  ls
+  310  gedit ldap.conf &
+  311  service slapd restart
+  312  apt install proftpd
+  313  apt install proftpd proftpd-mod-ldap
+  314  sudo dpkg --configure -a
+  315  apt install proftpd proftpd-mod-ldap
+  316  cd 
+  317  cd /
+  318  cd etc
+  319  ls
+  320  cd proftpd
+  321  mkdir -m 1777 /data/ftp
+  322  apt install proftpd proftpd-mod-ldap
+  323  ls
+  324  cp proftpd.conf proftpd.conf.11.29
+  325  ls
+  326  gedit proftpd.conf&
+  327  service proftpd restart
+  328  cd /var/log/proftpd/
+  329  ls
+  330  cat proftpd.log 
+  331  cd /data
+  332  ;s
+  333  la
+  334  apt install proftpd proftpd-mod-ldap
+  335  cd ../var/log/proftpd/
+  336  cat proftpd.log 
+  337  service slapd restart
+  338  service proftpd restart
+  339  logout
+  340  exit
+

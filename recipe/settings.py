@@ -128,11 +128,18 @@ USE_L10N = True
 
 USE_TZ = True
 
+#PAYPAL
+PAYPAL_CLIENT_ID  = "ARUp9IVkcic2wTy7Og5XrRyBevXi1hIWO63EiyaookbFgJ91WHKAhZdLnVLJ5BLT2BnqzCDT3bd2s35N"
+PAYPAL_CLIENT_SECRET = "EBPCLyFT43WNYJlPjRMrgR_QBCnZjkqVe3FlhwDO33t3JvCjW7wmyAJ_DOyOKvdy4o0AbhZ3Bn1tEZyW"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_URL = '/static/'
+UPLOAD_FILE_PATTERN = 'assets/uploaded_files/%s_%s'
+MEDIA_URL = '/assets/'
+MEDIA_ROOT = 'os.path.join(BASE_DIR)'
 
 AUTH_USER_MODEL = 'chef.ChefIdentity'
 LOGIN_REDIRECT_URL = 'home'
