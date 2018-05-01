@@ -7,7 +7,7 @@ from django.conf import settings
 from time import time
 from django_cryptography.fields import encrypt
 
-SECRET_KEY = '77&mr^k*rb9qinjl$+p7%@jz!4)*wg6-%bd8op^e7(lf641bxx'
+SECRET_KEY = ''
 
 def get_media_file_name_to_upload(instance, filename):
     return settings.UPLOAD_FILE_PATTERN % (str(time()).replace('.','_'), filename)
