@@ -141,8 +141,8 @@ def checkout_paypal(request,cart,orders):
 
     paypalrestsdk.configure({
         "mode": "sandbox",
-        "client_id": "ARUp9IVkcic2wTy7Og5XrRyBevXi1hIWO63EiyaookbFgJ91WHKAhZdLnVLJ5BLT2BnqzCDT3bd2s35N",
-        "client_secret": "EBPCLyFT43WNYJlPjRMrgR_QBCnZjkqVe3FlhwDO33t3JvCjW7wmyAJ_DOyOKvdy4o0AbhZ3Bn1tEZyW",
+        "client_id": ENTER OWN,
+        "client_secret": ENTER OWN,
     })
    
     payment = Payment({
