@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '77&mr^k*rb9qinjl$+p7%@jz!4)*wg6-%bd8op^e7(lf641bxx'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -129,8 +129,8 @@ USE_L10N = True
 USE_TZ = True
 
 #PAYPAL
-PAYPAL_CLIENT_ID  = "ARUp9IVkcic2wTy7Og5XrRyBevXi1hIWO63EiyaookbFgJ91WHKAhZdLnVLJ5BLT2BnqzCDT3bd2s35N"
-PAYPAL_CLIENT_SECRET = "EBPCLyFT43WNYJlPjRMrgR_QBCnZjkqVe3FlhwDO33t3JvCjW7wmyAJ_DOyOKvdy4o0AbhZ3Bn1tEZyW"
+PAYPAL_CLIENT_ID  = ""
+PAYPAL_CLIENT_SECRET = ""
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
@@ -145,5 +145,5 @@ AUTH_USER_MODEL = 'chef.ChefIdentity'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='1094081449333-hf7orpqam8sn873nj5362bgj3dpbrq7m.apps.googleusercontent.com'  #client key
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'm64IrGZjoVN_6nsM0E3cb__N' #secret key
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY =''  #client key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '' #secret key
